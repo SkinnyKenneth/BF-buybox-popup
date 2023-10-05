@@ -130,6 +130,7 @@ button {
 	transition: background 390ms ease-in, color 120ms ease-out 200ms;
 	font-family: inherit;
 	font-size: 1rem;
+	font-weight: 700;
 }
 
 .value-select button > span {
@@ -215,13 +216,13 @@ button {
 
 .tier-select button {
 	margin-inline: auto;
-	padding: 0.25rem 1rem;
+	padding: 0.25rem .75rem;
 	border: 2px solid var(--bf-blue);
 	background-color: var(--bf-blue);
 	color: #fff;
 	border-radius: 6px;
-	font-weight: 700;
-	font-size: 0.75rem;
+	font-weight: 600;
+	font-size: 0.875rem;
 }
 
 
