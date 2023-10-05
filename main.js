@@ -25,30 +25,36 @@ jQuery(function ($) {
 		subHeader.text($(this).text());
 	});
 
-    // Select elements using jQuery
-    const openModalBtn = $(".open-modal > button");
-    const closeModalBtn = $(".close-x");
-    const popup = $(".container");
-
-    // Open modal
-    openModalBtn.click(function () {
+	// Select elements using jQuery
+	const openModalBtn = $(".open-modal > button");
+	const closeModalBtn = $(".close-x");
+	const popup = $(".container");
+    const addedCartPopup = $(".added-to-cart-popup");
+    
+	// Open modal
+	openModalBtn.click(function () {
         openPopup();
-    });
-
-    const openPopup = () => {
+	});
+    
+	const openPopup = () => {
         openModalBtn.parent().addClass("closed");
-        popup.removeClass("closed");
-    };
 
-    // Close modal
-    closeModalBtn.click(function () {
-        setTimeout(() => {
-            popup.addClass("closed");
-            setTimeout(function () {
-                openModalBtn.parent().removeClass("closed");
-            }, 300);            
-        }, 1400);
-    });
+		let timeout = 0;
+		if (window.innerWidth <= 980) {
+            timeout = 5200; 
+            addedCartPopup.removeClass("closed");
+        };
+		setTimeout(() => {
+            addedCartPopup.addClass("closed");
+			popup.removeClass("closed");
+		}, timeout);
+	};
+
+	// Close modal
+	closeModalBtn.click(function () {
+		popup.addClass("closed");
+		openModalBtn.parent().removeClass("closed");
+	});
 });
 
 // // opening and closing popup on click
