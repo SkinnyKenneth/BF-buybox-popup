@@ -38,15 +38,16 @@ jQuery(function ($) {
     const openPopup = () => {
         openModalBtn.parent().addClass("closed");
         popup.removeClass("closed");
-        console.log([popup.attr("class"), openModalBtn.attr("class")]);
     };
 
     // Close modal
     closeModalBtn.click(function () {
-        popup.addClass("closed");
-        setTimeout(function () {
-            openModalBtn.parent().removeClass("closed");
-        }, 300);
+        setTimeout(() => {
+            popup.addClass("closed");
+            setTimeout(function () {
+                openModalBtn.parent().removeClass("closed");
+            }, 300);            
+        }, 1400);
     });
 });
 
