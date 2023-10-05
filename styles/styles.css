@@ -1,0 +1,292 @@
+@import url(/styles/variables.css);
+
+/* reset */
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	box-sizing: border-box;
+	font-size: 1rem;
+}
+
+/* utility classes */
+.flex {
+	display: flex;
+}
+
+.column {
+	flex-direction: column;
+}
+
+.grid {
+	display: grid;
+}
+
+/* global */
+body {
+	min-height: 100dvh;
+	place-content: center;
+	font-family: "Montserrat", sans-serif;
+}
+
+button {
+	cursor: pointer;
+	font-family: inherit;
+}
+
+/* layout */
+.container {
+	border: 4px solid var(--bf-blue);
+	margin: auto;
+	position: relative;
+}
+
+.close-x {
+	position: absolute;
+	inset: 1rem auto auto 1rem;
+	color: var(--bf-black);
+	cursor: pointer;
+}
+
+.close-x:hover {
+	color: var(--bf-light-grey);
+}
+
+.popup-header {
+	grid-template-columns: repeat(3, 1fr);
+	width: 100%;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem;
+	border-block-end: 2px solid var(--bf-blue);
+}
+
+.popup-header .logo-img {
+	object-fit: cover;
+	width: 12rem;
+	padding-inline: 4rem 0;
+	margin-inline-start: 1rem;
+}
+
+.logo-img > img {
+	width: 100%;
+}
+
+.popup-header div:nth-child(2) {
+	text-align: center;
+}
+
+.popup-header h2 {
+	color: var(--bf-blue);
+	font-size: 1.25rem;
+	margin-block-end: 1rem;
+}
+
+.popup-header p {
+	font-size: 1.125rem;
+	text-wrap: nowrap;
+}
+
+.popup-header div:nth-child(3) {
+	align-self: flex-start;
+	text-wrap: nowrap;
+}
+
+.value-select {
+	padding: 0 3rem;
+	text-align: center;
+	justify-content: space-evenly;
+}
+
+.value-select h3 {
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+.value-select > div {
+	gap: 0.75rem;
+}
+
+.value-select p {
+	text-align: start;
+	color: var(--bf-grey);
+}
+
+.value-select button {
+	padding: 0.5rem 3rem;
+	text-wrap: nowrap;
+	border: 3px solid var(--bf-blue);
+	background: linear-gradient(to right, #fff 40%, var(--bf-blue) 60%);
+	background-size: 450%;
+	background-position-x: left;
+	background-repeat: no-repeat;
+	color: var(--bf-blue);
+	border-radius: 6px;
+	transition: background 390ms ease-in, color 120ms ease-out 200ms;
+	font-family: inherit;
+	font-size: 1rem;
+}
+
+.value-select button > span {
+	pointer-events: none;
+}
+
+.value-select button:hover,
+.value-select button.selected,
+.value-select button:focus-visible {
+	background-position-x: right;
+	color: #fff;
+}
+
+.sub-container {
+	width: 100%;
+	gap: 1rem;
+	padding: 1rem 2rem;
+	margin: 1rem;
+	border: 4px solid var(--bf-blue);
+	border-radius: 6px;
+	align-items: center;
+}
+
+.sub-container > h2 {
+	text-align: center;
+	color: var(--bf-blue);
+	font-weight: 800;
+	margin-block-start: 0.5rem;
+	max-width: 19ch;
+	height: 60px;
+}
+
+.sub-options .sub {
+    display: none;
+	padding: 0.5rem;
+	text-align: center;
+	width: 100%;
+	gap: 1rem;
+	z-index: -1;
+}
+
+.sub-options .sub.selected {
+	display: flex;
+	z-index: 1;
+}
+
+.sub .tier-select {
+    border: 2px solid var(--bf-black);
+	padding: 0.75rem 1.5rem;
+	gap: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	border-radius: 3px;
+}
+
+.tier-select h3 {
+	color: var(--bf-blue);
+	font-size: 2rem;
+	line-height: 1.25rem;
+}
+
+.tier-select h3 > span {
+	color: black;
+	font-size: 1.25rem;
+}
+
+.tier-select p {
+	color: var(--bf-blue);
+	font-weight: 800;
+	margin-block: 0.5rem;
+}
+
+.tier-select p > span {
+    color: black;
+	font-size: 0.75rem;
+}
+
+.tier-select small {
+	font-size: 0.75rem;
+	font-weight: 700;
+}
+
+.tier-select button {
+	margin-inline: auto;
+	padding: 0.25rem 1rem;
+	border: 2px solid var(--bf-blue);
+	background-color: var(--bf-blue);
+	color: #fff;
+	border-radius: 6px;
+	font-weight: 700;
+	font-size: 0.75rem;
+}
+
+
+@media (max-width: 980px) {
+    .container {
+        border: none;
+        gap: .5rem;
+    }
+
+    .popup-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5rem 0 3cqi;
+    }
+
+    .popup-header .logo-img {
+        padding-inline: 0;
+        width: 10rem;
+    }
+
+    .popup-header div:nth-child(3) {
+        align-self: center;
+        font-size: .75rem;
+        text-wrap: wrap;
+    }
+
+    .sub-container > h2 {
+        display: none;
+    }
+
+    .select-container {
+        flex-direction: column;
+    }
+
+    .value-select {
+        gap: .5rem;
+        margin-block-start: .5rem;
+    }
+
+    .value-select,
+    .value-select button {
+        padding-inline: 2cqi;
+        margin-inline: 0.5rem;
+    }
+
+    .sub-container {
+        margin-inline: 0;
+        padding-inline: 0;
+        border: none;
+    }
+
+    .sub-options .sub {
+        gap: 1cqi;
+        padding: 1cqi;
+    }
+
+    .sub .tier-select {
+        padding-inline: 3cqi;
+    }
+
+    .tier-select h3 > span {
+        font-size: .875rem;
+    }
+
+    .tier-select small {
+        font-size: .75rem;
+    }
+}
