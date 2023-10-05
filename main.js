@@ -41,7 +41,7 @@ jQuery(function ($) {
 
 		let timeout = 0;
 		if (window.innerWidth <= 980) {
-            timeout = 4800; 
+            timeout = 3800; 
             addedCartPopup.removeClass("closed");
         };
 		setTimeout(() => {
