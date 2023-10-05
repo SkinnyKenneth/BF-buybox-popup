@@ -309,25 +309,7 @@ button {
 	.popup-header {
 		display: none;
 	}
-
-    /* .popup-header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0.5rem 0 3cqi;
-    }
-
-    .popup-header .logo-img {
-        padding-inline: 0;
-        width: 10rem;
-    }
-
-    .popup-header div:nth-child(3) {
-        align-self: center;
-        font-size: .75rem;
-        text-wrap: wrap;
-    } */
-
+	
     .sub-container > h2 {
         display: none;
     }
