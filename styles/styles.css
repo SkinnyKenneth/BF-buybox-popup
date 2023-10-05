@@ -160,6 +160,7 @@ button {
 	margin-block-start: 0.5rem;
 	max-width: 19ch;
 	height: 60px;
+	align-items: center;
 }
 
 .sub-options .sub {
